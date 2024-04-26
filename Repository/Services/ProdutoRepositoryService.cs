@@ -1,15 +1,15 @@
 ﻿using Domain.Entities;
-using Domain.Interfaces;
+using Domain.Infra.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Services
 {
-    public class ProdutoRepository : IProdutoRepository
+    public class ProdutoRepositoryService : IProdutoRepository
     {
 
         private readonly ProdutoContext _context;
         private readonly DbSet<Produto> DbSet;
-        public ProdutoRepository(ProdutoContext context)
+        public ProdutoRepositoryService(ProdutoContext context)
         {
             _context = context;
             DbSet = _context.Set<Produto>();

@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace Domain.Interfaces
+namespace Domain.Infra.Repository.Interfaces
 {
     public interface IProdutoRepository
     {

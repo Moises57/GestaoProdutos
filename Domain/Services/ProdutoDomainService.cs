@@ -1,7 +1,7 @@
 ﻿using Domain.Dtos;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Interfaces;
+using Domain.Infra.Repository.Interfaces;
 
 namespace Domain.Services
 {

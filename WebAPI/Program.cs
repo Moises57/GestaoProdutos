@@ -1,5 +1,5 @@
 using Application.Services;
-using Domain.Interfaces;
+using Domain.Infra.Repository.Interfaces;
 using Domain.Services;
 using Microsoft.EntityFrameworkCore;
 using Repository;
@@ -20,7 +20,7 @@ builder.Services.AddDbContext<ProdutoContext>(options => options.UseSqlServer(co
 
 builder.Services.AddScoped<IProdutoApplicationService, ProdutoApplicationService>();
 builder.Services.AddScoped<IProdutoDomainService, ProdutoDomainService>();
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepositoryService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
