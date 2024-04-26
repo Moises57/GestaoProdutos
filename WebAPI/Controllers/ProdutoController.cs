@@ -1,8 +1,6 @@
 ﻿using Application.Services;
 using Domain.Dtos;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace WebAPI.Controllers
 {
@@ -25,13 +23,13 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<ReadProdutoDto> RecuperaFilmes([FromQuery] int skip, int take)
+        public IEnumerable<ReadProdutoDto> RecuperarProdutos([FromQuery] int skip, int take)
         {
             return _applicationProdutoService.BuscarTodosProdutos(skip, take);
         }
 
         [HttpGet("{id}")]
-        public IActionResult RecuperaProdutoPorId(int id)
+        public IActionResult RecuperarProdutoPorId(int id)
         {
             var produtoDto = _applicationProdutoService.BuscarProdutoPorId(id);
             if (produtoDto == null) return BadRequest("Nenhum produto encontrado.");
